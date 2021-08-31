@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from main.models import Task, TaskBar
 
 def index(response):
-    return HttpResponse("<h1> Hello World </h1>")
+    tasks = list(Task.objects.all())
+    print(tasks)
+    return render(response, "main/taskBar.html", {"tasks": tasks})
 
 def login(response):
-    return HttpResponse("There is a login page for you bro")
+    return render(response, "main/login.html", {})
