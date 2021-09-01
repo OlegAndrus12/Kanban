@@ -1,0 +1,7 @@
+.nav-link {
+    font-size: 16pt;
+}
+
+.nav-link:hover {
+    border-bottom:1px solid #fff;
+}
