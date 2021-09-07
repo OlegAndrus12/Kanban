@@ -4,15 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title%}Kanban{%endblock%}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
     {% load static %}
     <link rel="icon" href="{% static 'main/kanban.png' %}"></link>
     <link rel="stylesheet" href="{% static 'main/style.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
     <head>
     <body>
-          <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-secondary d-flex justify-content-center align-items-center">
+     <nav class="navbar navbar-expand-lg d-flex justify-content-center align-items-center bg-secondary flex-column mb-0">
     <!-- Container wrapper -->
     <div class="container-fluid">
       <!-- Toggle button -->
@@ -22,19 +21,19 @@
       <!-- Collapsible wrapper -->
       <div class="collapse navbar-collapse justify-content-left" id="navbarSupportedContent">
         <!-- Navbar brand -->
-        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+        <a class="navbar-brand mt-2 mt-lg-0" href="{% url 'index'%}">
           <img src="{% static 'main/kanban.png' %}" height="40" alt="" loading="lazy">
         </a>
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
           <li class="nav-item">
-            <a class="nav-link text-white" id = "" href="#">Dashboard</a>
+            <a class="nav-link text-white" id="dash" href="#">Dashboard</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="#">Kanban</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Tasks keeper</a>
+            <a class="nav-link text-white" href="{% url 'notes' %}">Tasks keeper</a>
           </li>
         </ul>
         <!-- Left links -->
@@ -43,7 +42,7 @@
       <!-- Right elements -->
       <div class="d-flex align-items-center">
         <!-- Avatar -->
-        <a class="dropdown-toggle d-flex align-items-center" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false" href="#" >
+        <a class="dropdown-toggle d-flex align-items-center" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false" href="#">
           <img src="https://mdbootstrap.com/img/new/avatars/2.jpg" class="rounded-circle" height="50" alt="" loading="lazy">
         </a>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink" style="">
@@ -62,13 +61,7 @@
     </div>
     <!-- Container wrapper -->
   </nav>
-  <!-- Navbar -->
-        <div id = "content", name = "content">
-            {% block content %}
-
-            {% endblock %}
-        </div>
-    
+  {%block content %}{%endblock%}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 <html>

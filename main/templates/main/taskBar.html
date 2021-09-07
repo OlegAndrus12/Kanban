@@ -1,8 +1,107 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
-    <h1 style="text-align: center, font-size: 12px, font-weight: bold">Hi there! You have {{tasks|length}} tasks!</h1>
-        {% for task in tasks%}
-            <h3 style="text-align: center,margin-top:10px"> {{task.title}}</h3>
-        {% endfor %}
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar" class="">
+      <div class="sidebar-header">
+        <h3>Tasks Keeper</h3>
+      </div>
+      <ul class="list-unstyled components">
+        <li class="active">
+          <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+          <ul class="collapse list-unstyled" id="homeSubmenu">
+            <li>
+              <a href="#">Home 1</a>
+            </li>
+            <li>
+              <a href="#">Home 2</a>
+            </li>
+            <li>
+              <a href="#">Home 3</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Lists</a>
+          <ul class="collapse list-unstyled" id="pageSubmenu">
+            <li>
+              <a href="#">Page 1</a>
+            </li>
+            <li>
+              <a href="#">Page 2</a>
+            </li>
+            <li>
+              <a href="#">Page 3</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Portfolio</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+      <ul class="list-unstyled CTAs">
+        <li>
+          <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Export to pdf</a>
+        </li>
+        <li>
+          <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Page Content  -->
+    <div id="content" >
+      <div class="col-md-12 pr-5">
+        <div class="row d-flex flex-row-reverse">
+          <div class="col-md-4">
+            <form class="form-inline d-flex flex-row-reverse mr-2">
+              <div class="input-group w-100 my-4">
+                <input type="text" class="form-control ml-2" id="inlineFormInputGroup" placeholder="Search">
+                <div class="input-group-append"><button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button></div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row ml-5 mr-2">
+          <div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-header"> Header </div>
+                  <div class="card-body">
+                    <h4>Title</h4>
+                    <p>Some quick example text to build on the card title .</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-header"> Header </div>
+                  <div class="card-body">
+                    <h4>Title</h4>
+                    <p>Some quick example text to build on the card title .</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-header"> Header </div>
+                  <div class="card-body">
+                    <h4>Title</h4>
+                    <p>Some quick example text to build on the card title .</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
