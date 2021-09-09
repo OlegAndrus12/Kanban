@@ -10,5 +10,5 @@ def login(response):
 
 def notes(response):
     tasks = list(Task.objects.all())
-    print(tasks)
-    return render(response, "main/taskBar.html", {"tasks": tasks})
+    taskBars = list(TaskBar.objects.all())
+    return render(response, "main/taskBar.html", {"taskBars": taskBars})

@@ -25,15 +25,11 @@
         <li>
           <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Lists</a>
           <ul class="collapse list-unstyled" id="pageSubmenu">
+          {% for taskBar in taskBars%}
             <li>
-              <a href="#">Django tutorial</a>
+                <a href="#">{{taskBar.name|default:"List without name"}}</a>
             </li>
-            <li>
-              <a href="#">ToDo list</a>
-            </li>
-            <li>
-              <a href="#">Extra large list name that should be truncated</a>
-            </li>
+          {% endfor %}
           </ul>
         </li>
 
@@ -65,8 +61,8 @@
                 </div>
               </div>
               <div class="col-md-4 d-flex justify-content-center align-items-center">
-                <h2 class="mb-2">Heading 2 <small class="text-muted">subtitle</small></h2>
-              </div>
+                <h2 class="mb-2">{{ taskBars.0.name }}</h2>
+              </div>  
               <div class="col-md-4">
                 <form class="form-inline d-flex flex-row-reverse mr-2">
                   <div class="input-group w-100 my-4">
