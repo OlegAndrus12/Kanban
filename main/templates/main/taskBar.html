@@ -9,63 +9,73 @@
       </div>
       <ul class="list-unstyled components">
         <li class="active">
-          <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+          <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Filters</a>
           <ul class="collapse list-unstyled" id="homeSubmenu">
             <li>
-              <a href="#">Home 1</a>
+              <a href="#">Finisehd</a>
             </li>
             <li>
-              <a href="#">Home 2</a>
+              <a href="#">Close to deadline</a>
             </li>
             <li>
-              <a href="#">Home 3</a>
+              <a href="#">In progres</a>
             </li>
           </ul>
-        </li>
-        <li>
-          <a href="#">About</a>
         </li>
         <li>
           <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Lists</a>
           <ul class="collapse list-unstyled" id="pageSubmenu">
             <li>
-              <a href="#">Page 1</a>
+              <a href="#">Django tutorial</a>
             </li>
             <li>
-              <a href="#">Page 2</a>
+              <a href="#">ToDo list</a>
             </li>
             <li>
-              <a href="#">Page 3</a>
+              <a href="#">Extra large list name that should be truncated</a>
             </li>
           </ul>
         </li>
-        <li>
-          <a href="#">Portfolio</a>
-        </li>
-        <li>
-          <a href="#">Contact</a>
-        </li>
+
       </ul>
       <ul class="list-unstyled CTAs">
         <li>
           <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Export to pdf</a>
         </li>
         <li>
-          <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+          <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Import notes</a>
         </li>
       </ul>
     </nav>
     <!-- Page Content  -->
     <div id="content" >
       <div class="col-md-12 pr-5">
-        <div class="row d-flex flex-row-reverse">
-          <div class="col-md-4">
-            <form class="form-inline d-flex flex-row-reverse mr-2">
-              <div class="input-group w-100 my-4">
-                <input type="text" class="form-control ml-2" id="inlineFormInputGroup" placeholder="Search">
-                <div class="input-group-append"><button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button></div>
+        <div class="row d-flex flex-row-reverse" >
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-4 d-flex justify-content-center align-items-center">
+                <!-- Example single danger button -->
+                <div class="btn-group w-75 ml-5 mb-2">
+                  <button type="button" class="btn dropdown-toggle btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sort notes by </button>
+                  <div class="dropdown-menu w-100" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                    <a class="dropdown-item" href="#">Last modified</a>
+                    <a class="dropdown-item" href="#">Title</a>
+                    <a class="dropdown-item" href="#">Created at</a>
+                  </div>
+                </div>
               </div>
-            </form>
+              <div class="col-md-4 d-flex justify-content-center align-items-center">
+                <h2 class="mb-2">Heading 2 <small class="text-muted">subtitle</small></h2>
+              </div>
+              <div class="col-md-4">
+                <form class="form-inline d-flex flex-row-reverse mr-2">
+                  <div class="input-group w-100 my-4">
+                    <input type="text" class="form-control ml-2" id="inlineFormInputGroup" placeholder="Search">
+                    <div class="input-group-append"><button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button></div>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row ml-5 mr-2">
