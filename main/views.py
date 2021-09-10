@@ -11,4 +11,6 @@ def login(response):
 def notes(response):
     tasks = list(Task.objects.all())
     taskBars = list(TaskBar.objects.all())
+    print(TaskBar.objects.get_taskbar_names())
+    print(TaskBar.objects.get_notes_for_taskbar(taskBars[2]))
     return render(response, "main/taskBar.html", {"taskBars": taskBars})
