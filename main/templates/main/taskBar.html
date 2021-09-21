@@ -12,7 +12,7 @@
           <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Filters</a>
           <ul class="collapse list-unstyled" id="homeSubmenu">
             <li>
-              <a href="#">Finisehd</a>
+              <a href="#">Finished</a>
             </li>
             <li>
               <a href="#">Close to deadline</a>
@@ -27,7 +27,7 @@
           <ul class="collapse list-unstyled" id="pageSubmenu">
           {% for taskBar in taskBars%}
             <li>
-                <a href="#">{{taskBar.name|default:"List without name"}}</a>
+                <a href="{{ taskBar.get_absolute_url }}">{{taskBar.name|default:"List without name"}}</a>
             </li>
           {% endfor %}
           </ul>
@@ -61,7 +61,7 @@
                 </div>
               </div>
               <div class="col-md-4 d-flex justify-content-center align-items-center">
-                <h2 class="mb-2">{{ taskBars.0.name }}</h2>
+                <h2 class="mb-2">{{ selected_taskbar_name|default:"List without name" }}</h2>
               </div>  
               <div class="col-md-4">
                 <form class="form-inline d-flex flex-row-reverse mr-2">
@@ -75,37 +75,17 @@
           </div>
         </div>
         <div class="row ml-5 mr-2">
-          <div>
-            <div class="row">
+        {%for note in notes%}
               <div class="col-md-4">
-                <div class="card">
-                  <div class="card-header"> Header </div>
+                <div class="card h-100">
+                  <div class="card-header"> {{note.title|truncatewords:4}} </div>
                   <div class="card-body">
-                    <h4>Title</h4>
-                    <p>Some quick example text to build on the card title .</p>
+                    <h4>{{note.title|truncatewords:4}}</h4>
+                    <p>{{note.description|truncatewords:10}}</p>
                   </div>
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="card">
-                  <div class="card-header"> Header </div>
-                  <div class="card-body">
-                    <h4>Title</h4>
-                    <p>Some quick example text to build on the card title .</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="card">
-                  <div class="card-header"> Header </div>
-                  <div class="card-body">
-                    <h4>Title</h4>
-                    <p>Some quick example text to build on the card title .</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        {%endfor%}
         </div>
       </div>
     </div>

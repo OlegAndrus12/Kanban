@@ -2,6 +2,7 @@ from django.db import models
 from datetime import datetime
 from django.utils.timezone import make_aware
 from .managers import TaskManager, TaskBarManager
+from django.urls import reverse
 
 class TaskBar(models.Model):
     name = models.CharField(max_length=200)
@@ -13,6 +14,10 @@ class TaskBar(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse("taskbar-list", kwargs={"id": self.id})
+    
 
 class Task(models.Model):
     title = models.CharField(max_length=200)
